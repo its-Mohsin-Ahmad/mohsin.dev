@@ -1,0 +1,504 @@
+/* ==========================================================================
+   MOHSIN AHMAD — ADVANCED CINEMATIC GLASSMORPHISM & 3D MOTION DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0B0B0D;
+  --bg-surface: #111114;
+  --bg-surface-hover: #18181C;
+  --bg-surface-elevated: #16161A;
+
+  /* Glassmorphism tokens */
+  --glass-bg: rgba(17, 17, 20, 0.65);
+  --glass-bg-hover: rgba(24, 24, 28, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 90, 0, 0.4);
+  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+  --glass-blur: blur(16px);
+
+  --color-orange-primary: #FF5A00;
+  --color-orange-bright: #FF6A00;
+  --color-amber: #FF9A35;
+  --color-orange-glow: rgba(255, 90, 0, 0.35);
+  --color-orange-subtle: rgba(255, 90, 0, 0.12);
+
+  --text-primary: #F5F5F5;
+  --text-secondary: #B0B0B8;
+  --text-muted: #777780;
+  --text-accent: #FF5A00;
+
+  --border-default: #29292D;
+  --border-hover: rgba(255, 90, 0, 0.45);
+  --border-active: #FF5A00;
+
+  --font-display: 'Bebas Neue', Impact, 'Space Grotesk', sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Sora', system-ui, sans-serif;
+  --font-accent: 'Syne', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --header-height: 80px;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto; /* Handled smoothly by Lenis */
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Film grain / subtle futuristic grid texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 90, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+  pointer-events: none;
+  z-index: 998;
+  opacity: 0.65;
+}
+
+/* Typography tokens */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #25252A;
+  border-radius: 4px;
+  border: 1px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange-primary);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-orange-primary);
+  color: #000;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+}
+
+.section-spacing {
+  padding-top: clamp(4.5rem, 9vw, 8.5rem);
+  padding-bottom: clamp(4.5rem, 9vw, 8.5rem);
+}
+
+/* ==========================================================================
+   ADVANCED GLASSMORPHISM SURFACES
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass-panel {
+    background: rgba(17, 17, 20, 0.96) !important;
+  }
+}
+
+.glass-panel:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 16px 45px -8px var(--color-orange-glow);
+}
+
+/* Glass HUD Panel with Orange Cyberpunk Corner Accents */
+.glass-hud {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-md);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-hud::before,
+.glass-hud::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.glass-hud::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-orange-primary);
+  border-left: 2px solid var(--color-orange-primary);
+  border-top-left-radius: 4px;
+}
+
+.glass-hud::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-orange-primary);
+  border-right: 2px solid var(--color-orange-primary);
+  border-bottom-right-radius: 4px;
+}
+
+.glass-hud:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-hover);
+  box-shadow: 0 16px 45px -8px var(--color-orange-glow);
+}
+
+.glass-hud:hover::before,
+.glass-hud:hover::after {
+  width: 18px;
+  height: 18px;
+  box-shadow: 0 0 12px var(--color-orange-bright);
+}
+
+/* ==========================================================================
+   3D CARD SYSTEM
+   ========================================================================== */
+
+.perspective-container {
+  perspective: 1200px;
+}
+
+.card-3d-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.card-3d-layer-base {
+  transform: translateZ(0px);
+}
+
+.card-3d-layer-content {
+  transform: translateZ(24px);
+  transform-style: preserve-3d;
+}
+
+.card-3d-layer-float {
+  transform: translateZ(36px);
+}
+
+/* Glass Glare Reflection Layer */
+.glass-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.card-3d-wrapper:hover .glass-glare {
+  opacity: 1;
+}
+
+/* Badges & Tech Tags */
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.tech-tag:hover {
+  color: var(--color-orange-primary);
+  border-color: rgba(255, 90, 0, 0.5);
+  background: rgba(255, 90, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.85rem;
+  background: linear-gradient(135deg, var(--color-orange-bright) 0%, var(--color-orange-primary) 100%);
+  color: #050505;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px var(--color-orange-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--color-orange-glow);
+  filter: brightness(1.12);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.85rem;
+  background: rgba(17, 17, 20, 0.7);
+  backdrop-filter: blur(12px);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-orange-primary);
+  color: var(--color-orange-primary);
+  background: rgba(255, 90, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -4px var(--color-orange-glow);
+}
+
+/* Japanese Anime Accents */
+.japanese-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  letter-spacing: 0.25em;
+  color: var(--color-orange-primary);
+  opacity: 0.85;
+  user-select: none;
+}
+
+/* Orange Glow Ring / Embers */
+.glow-orange {
+  text-shadow: 0 0 20px rgba(255, 90, 0, 0.6);
+}
+
+.box-glow-orange {
+  box-shadow: 0 0 35px -5px rgba(255, 90, 0, 0.4);
+}
+
+/* Active navigation indicator */
+.nav-link {
+  position: relative;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link.active {
+  color: var(--color-orange-primary);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-orange-primary);
+  box-shadow: 0 0 10px var(--color-orange-primary);
+  border-radius: 2px;
+}
+
+/* Masked Text Reveal Helper */
+.text-mask-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.text-mask-inner {
+  display: block;
+  transform: translateY(105%);
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Bounce arrow animation for scroll indicator */
+@keyframes bounceY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
+
+.bounce-arrow {
+  animation: bounceY 1.4s ease-in-out infinite;
+}
+
+/* Responsive: hero two-column grid collapses on tablet/mobile */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-character-col {
+    order: -1;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .japanese-vertical {
+    display: none;
+  }
+}
+
+/* Responsive: intro two-column grid collapses on tablet/mobile */
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Reduced Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card-3d-wrapper {
+    transform: none !important;
+    transition: none !important;
+  }
+  .bounce-arrow {
+    animation: none !important;
+  }
+}
