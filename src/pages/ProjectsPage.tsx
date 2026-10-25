@@ -178,7 +178,7 @@ export const ProjectsPage: React.FC = () => {
               className="projects-bust-wrap"
             >
               <img
-                src="/assets/anime/character-bust.png"
+                src={`${import.meta.env.BASE_URL}assets/anime/character-bust.png`}
                 alt="Mohsin Ahmad artwork"
                 style={{
                   width: '100%',
