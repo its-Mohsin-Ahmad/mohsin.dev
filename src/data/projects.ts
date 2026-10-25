@@ -16,12 +16,12 @@ export const projectsData: Project[] = [
     id: 'be-careful',
     number: '01',
     title: 'BE CAREFUL',
-    subtitle: 'Safety & Security Platform',
-    category: 'SAFETY & SECURITY',
-    description: 'An interactive modern web platform centered around cybersecurity awareness, secure protocols, and threat defense education.',
+    subtitle: 'Trusted Healthcare Platform',
+    category: 'HEALTHCARE',
+    description: 'BE CAREFUL helps you discover healthcare information, find qualified doctors, book appointments, track your queue, and manage your health records — all in one place.',
     liveUrl: 'https://its-mohsin-ahmad.github.io/Be-careful/',
     image: `${import.meta.env.BASE_URL}assets/projects/be-careful.png`,
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive UI'],
+    tags: ['Healthcare', 'Appointments', 'Medical Records', 'Telemedicine'],
     featured: true
   },
   {
