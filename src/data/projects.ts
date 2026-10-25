@@ -95,5 +95,29 @@ export const projectsData: Project[] = [
     image: `${import.meta.env.BASE_URL}assets/projects/time-to-fly.png`,
     tags: ['Booking Flow', 'Responsive Design', 'Interactive UI', 'Travel'],
     featured: false
+  },
+  {
+    id: 'infinity-weld',
+    number: '08',
+    title: 'INFINITY WELD',
+    subtitle: 'Welding Solutions / Industrial Services',
+    category: 'INDUSTRIAL / WELDING',
+    description: 'Professional welding and fabrication services for industrial and commercial projects.',
+    liveUrl: 'https://infinity-weld.vercel.app/',
+    image: `${import.meta.env.BASE_URL}assets/projects/infinity-weld.png`,
+    tags: ['Welding', 'Industrial Services', 'Fabrication', 'Business'],
+    featured: false
+  },
+  {
+    id: 'payback',
+    number: '09',
+    title: 'PAYBACK',
+    subtitle: 'Financial Platform / Cashback Rewards',
+    category: 'FINTECH / REWARDS',
+    description: 'A cashback and rewards platform helping users save money on everyday purchases.',
+    liveUrl: 'https://its-mohsin-ahmad.github.io/payback/',
+    image: `${import.meta.env.BASE_URL}assets/projects/payback.png`,
+    tags: ['Fintech', 'Rewards', 'Cashback', 'Web App'],
+    featured: false
   }
 ];
