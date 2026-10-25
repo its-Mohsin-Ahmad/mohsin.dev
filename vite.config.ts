@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/mohsin.dev/',
+  base: process.env.VERCEL ? '/' : '/mohsin.dev/',
   build: {
     outDir: 'docs',
   },
