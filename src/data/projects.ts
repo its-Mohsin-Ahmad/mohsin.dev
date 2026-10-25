@@ -97,15 +97,15 @@ export const projectsData: Project[] = [
     featured: false
   },
   {
-    id: 'infinity-weld',
+    id: 'you-can',
     number: '08',
-    title: 'INFINITY WELD',
-    subtitle: 'Welding Solutions / Industrial Services',
-    category: 'INDUSTRIAL / WELDING',
-    description: 'Professional welding and fabrication services for industrial and commercial projects.',
-    liveUrl: 'https://infinity-weld.vercel.app/',
-    image: `${import.meta.env.BASE_URL}assets/projects/infinity-weld.png`,
-    tags: ['Welding', 'Industrial Services', 'Fabrication', 'Business'],
+    title: 'YOU CAN',
+    subtitle: 'Train Strong / Fitness Dashboard',
+    category: 'FITNESS / HEALTH',
+    description: 'An athlete telemetry and progress dashboard featuring workout tracking, streak monitoring, and session planning.',
+    liveUrl: 'https://you-can-opal.vercel.app/',
+    image: `${import.meta.env.BASE_URL}assets/projects/you-can.png`,
+    tags: ['Fitness', 'Dashboard', 'Health Tracking', 'React'],
     featured: false
   },
   {
