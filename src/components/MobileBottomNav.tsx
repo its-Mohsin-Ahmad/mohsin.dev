@@ -47,16 +47,7 @@ export const MobileBottomNav: React.FC = () => {
   return (
     <>
       <div className="mobile-bottom-nav" aria-label="Mobile navigation">
-        <div className="mbn-dock">
-          <div
-            className="mbn-notch"
-            style={{ transform: `translateX(${offsets[safeIndex]})` }}
-          >
-            <svg width="80" height="24" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0C12 0 16 20 40 20C64 20 68 0 80 0V24H0V0Z" fill="#0f172a" fillOpacity="0.9" />
-            </svg>
-          </div>
-
+        <div className="mbn-dock" style={{ '--notch-x': `${50 + parseInt(offsets[safeIndex])}%` } as React.CSSProperties}>
           <div
             className="mbn-fab-wrap"
             style={{ transform: `translateX(${offsets[safeIndex]})` }}
@@ -133,6 +124,8 @@ export const MobileBottomNav: React.FC = () => {
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            -webkit-mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
+            mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
             display: flex;
             align-items: center;
             justify-content: space-around;
