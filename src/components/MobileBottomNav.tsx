@@ -58,19 +58,21 @@ export const MobileBottomNav: React.FC = () => {
           </div>
 
           <div
-            className="mbn-fab"
+            className="mbn-fab-wrap"
             style={{ transform: `translateX(${offsets[safeIndex]})` }}
           >
-            <span
-              style={{
-                display: 'inline-flex',
-                opacity: fabOpacity,
-                transform: `scale(${fabScale})`,
-                transition: 'opacity 0.15s ease, transform 0.15s ease',
-              }}
-            >
-              <ActiveIcon size={22} />
-            </span>
+            <div className="mbn-fab">
+              <span
+                style={{
+                  display: 'inline-flex',
+                  opacity: fabOpacity,
+                  transform: `scale(${fabScale})`,
+                  transition: 'opacity 0.15s ease, transform 0.15s ease',
+                }}
+              >
+                <ActiveIcon size={22} />
+              </span>
+            </div>
           </div>
           {tabs.map((tab, i) => {
             const isActive = i === safeIndex;
@@ -146,11 +148,17 @@ export const MobileBottomNav: React.FC = () => {
             pointer-events: none;
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
           }
-          .mbn-fab {
+          .mbn-fab-wrap {
             position: absolute;
             top: -24px;
-            left: 50%;
-            margin-left: -28px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .mbn-fab {
             width: 56px;
             height: 56px;
             background: linear-gradient(135deg, #E65C00, #FF8833);
@@ -162,7 +170,7 @@ export const MobileBottomNav: React.FC = () => {
             color: #fff;
             font-size: 20px;
             z-index: 20;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: auto;
           }
           .mbn-tab {
             position: relative;

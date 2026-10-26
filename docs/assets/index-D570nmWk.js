@@ -31,7 +31,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             display: none !important;
           }
         }
-      `})]})},Qf=[{name:`Home`,path:`/`,icon:Cf},{name:`About`,path:`/about`,icon:zf},{name:`Skills`,path:`/skills`,icon:sf},{name:`Projects`,path:`/projects`,icon:Jd},{name:`Contact`,path:`/contact`,icon:Df}],$f=[`-36%`,`-18%`,`0%`,`18%`,`36%`],ep=()=>{let e=lt(),t=ot(),n=Qf.findIndex(e=>e.path===`/`?t.pathname===`/`:t.pathname.startsWith(e.path)),r=n===-1?0:n,[i,a]=(0,_.useState)(r),[o,s]=(0,_.useState)(1),[c,l]=(0,_.useState)(1);(0,_.useEffect)(()=>{s(0),l(.5);let e=setTimeout(()=>{a(r),s(1),l(1)},150);return()=>clearTimeout(e)},[r]);let u=Qf[i].icon;return(0,Z.jsxs)(Z.Fragment,{children:[(0,Z.jsx)(`div`,{className:`mobile-bottom-nav`,"aria-label":`Mobile navigation`,children:(0,Z.jsxs)(`div`,{className:`mbn-dock`,children:[(0,Z.jsx)(`div`,{className:`mbn-notch`,style:{transform:`translateX(${$f[r]})`},children:(0,Z.jsx)(`svg`,{width:`80`,height:`24`,viewBox:`0 0 80 24`,fill:`none`,xmlns:`http://www.w3.org/2000/svg`,children:(0,Z.jsx)(`path`,{d:`M0 0C12 0 16 20 40 20C64 20 68 0 80 0V24H0V0Z`,fill:`#0f172a`,fillOpacity:`0.9`})})}),(0,Z.jsx)(`div`,{className:`mbn-fab`,style:{transform:`translateX(${$f[r]})`},children:(0,Z.jsx)(`span`,{style:{display:`inline-flex`,opacity:o,transform:`scale(${c})`,transition:`opacity 0.15s ease, transform 0.15s ease`},children:(0,Z.jsx)(u,{size:22})})}),Qf.map((t,n)=>{let i=n===r,a=t.icon;return(0,Z.jsxs)(`button`,{type:`button`,onClick:()=>e(t.path),className:`mbn-tab`,"aria-label":t.name,"aria-current":i?`page`:void 0,children:[(0,Z.jsx)(`div`,{className:`mbn-icon-box`,style:{opacity:+!i,transform:i?`scale(0.75)`:`scale(1)`},children:(0,Z.jsx)(a,{size:20})}),(0,Z.jsx)(`span`,{className:`mbn-label`,style:{color:i?`#FF8833`:`#9ca3af`},children:t.name})]},t.path)})]})}),(0,Z.jsx)(`style`,{children:`
+      `})]})},Qf=[{name:`Home`,path:`/`,icon:Cf},{name:`About`,path:`/about`,icon:zf},{name:`Skills`,path:`/skills`,icon:sf},{name:`Projects`,path:`/projects`,icon:Jd},{name:`Contact`,path:`/contact`,icon:Df}],$f=[`-36%`,`-18%`,`0%`,`18%`,`36%`],ep=()=>{let e=lt(),t=ot(),n=Qf.findIndex(e=>e.path===`/`?t.pathname===`/`:t.pathname.startsWith(e.path)),r=n===-1?0:n,[i,a]=(0,_.useState)(r),[o,s]=(0,_.useState)(1),[c,l]=(0,_.useState)(1);(0,_.useEffect)(()=>{s(0),l(.5);let e=setTimeout(()=>{a(r),s(1),l(1)},150);return()=>clearTimeout(e)},[r]);let u=Qf[i].icon;return(0,Z.jsxs)(Z.Fragment,{children:[(0,Z.jsx)(`div`,{className:`mobile-bottom-nav`,"aria-label":`Mobile navigation`,children:(0,Z.jsxs)(`div`,{className:`mbn-dock`,children:[(0,Z.jsx)(`div`,{className:`mbn-notch`,style:{transform:`translateX(${$f[r]})`},children:(0,Z.jsx)(`svg`,{width:`80`,height:`24`,viewBox:`0 0 80 24`,fill:`none`,xmlns:`http://www.w3.org/2000/svg`,children:(0,Z.jsx)(`path`,{d:`M0 0C12 0 16 20 40 20C64 20 68 0 80 0V24H0V0Z`,fill:`#0f172a`,fillOpacity:`0.9`})})}),(0,Z.jsx)(`div`,{className:`mbn-fab-wrap`,style:{transform:`translateX(${$f[r]})`},children:(0,Z.jsx)(`div`,{className:`mbn-fab`,children:(0,Z.jsx)(`span`,{style:{display:`inline-flex`,opacity:o,transform:`scale(${c})`,transition:`opacity 0.15s ease, transform 0.15s ease`},children:(0,Z.jsx)(u,{size:22})})})}),Qf.map((t,n)=>{let i=n===r,a=t.icon;return(0,Z.jsxs)(`button`,{type:`button`,onClick:()=>e(t.path),className:`mbn-tab`,"aria-label":t.name,"aria-current":i?`page`:void 0,children:[(0,Z.jsx)(`div`,{className:`mbn-icon-box`,style:{opacity:+!i,transform:i?`scale(0.75)`:`scale(1)`},children:(0,Z.jsx)(a,{size:20})}),(0,Z.jsx)(`span`,{className:`mbn-label`,style:{color:i?`#FF8833`:`#9ca3af`},children:t.name})]},t.path)})]})}),(0,Z.jsx)(`style`,{children:`
         .mobile-bottom-nav {
           display: none;
         }
@@ -72,11 +72,17 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             pointer-events: none;
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
           }
-          .mbn-fab {
+          .mbn-fab-wrap {
             position: absolute;
             top: -24px;
-            left: 50%;
-            margin-left: -28px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .mbn-fab {
             width: 56px;
             height: 56px;
             background: linear-gradient(135deg, #E65C00, #FF8833);
@@ -88,7 +94,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             color: #fff;
             font-size: 20px;
             z-index: 20;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: auto;
           }
           .mbn-tab {
             position: relative;
