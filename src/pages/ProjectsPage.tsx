@@ -171,12 +171,12 @@ export const ProjectsPage: React.FC = () => {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '500px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 margin: '0 auto',
-                padding: '0.5rem',
+                padding: '1rem',
               }}
               className="projects-bust-wrap"
             >
@@ -187,9 +187,9 @@ export const ProjectsPage: React.FC = () => {
                   width: '100%',
                   height: 'auto',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 40px rgba(255, 90, 0, 0.5))',
+                  filter: 'drop-shadow(0 0 45px rgba(255, 90, 0, 0.5))',
                   borderRadius: '24px',
-                  transform: 'rotate(-3deg)',
+                  transform: 'rotate(-2deg)',
                   transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                 }}
               />

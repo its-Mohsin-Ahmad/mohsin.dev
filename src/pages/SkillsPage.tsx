@@ -127,12 +127,12 @@ export const SkillsPage: React.FC = () => {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '500px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 margin: '0 auto',
-                padding: '0.5rem',
+                padding: '1rem',
               }}
               className="skills-bust-wrap"
             >
@@ -160,7 +160,7 @@ export const SkillsPage: React.FC = () => {
                   objectFit: 'contain',
                   filter: 'drop-shadow(0 0 45px rgba(255, 90, 0, 0.5))',
                   borderRadius: '24px',
-                  transform: 'rotate(2deg)',
+                  transform: 'rotate(-2deg)',
                   transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                 }}
               />
