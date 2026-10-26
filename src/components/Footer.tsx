@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
-              <KonohaLogo size={32} />
+              <KonohaLogo size={65} />
               <span
                 style={{
                   fontFamily: 'var(--font-display)',

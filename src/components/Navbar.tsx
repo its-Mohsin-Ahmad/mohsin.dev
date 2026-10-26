@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
               }}
               aria-label="Mohsin Ahmad Home"
             >
-              <KonohaLogo size={36} />
+              <KonohaLogo size={65} />
               <span
                 style={{
                   fontFamily: 'var(--font-display)',
