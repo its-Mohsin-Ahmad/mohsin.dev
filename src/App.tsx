@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { InitialLoader } from './components/InitialLoader';
 import { CustomCursor } from './components/CustomCursor';
 import { ScrollProgress } from './components/ScrollProgress';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProjectsPage } from './pages/ProjectsPage';
@@ -50,6 +51,8 @@ export const App: React.FC = () => {
           </main>
 
           <Footer />
+
+          <MobileBottomNav />
         </div>
       </LenisProvider>
     </Router>
