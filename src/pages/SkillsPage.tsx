@@ -127,12 +127,12 @@ export const SkillsPage: React.FC = () => {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '600px',
+                maxWidth: '400px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 margin: '0 auto',
-                padding: '1rem',
+                padding: '0.5rem',
               }}
               className="skills-bust-wrap"
             >
