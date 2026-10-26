@@ -82,12 +82,12 @@ export const ProjectsPage: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexWrap: 'wrap',
+              flexWrap: 'nowrap',
               gap: '2rem',
             }}
           >
             {/* Heading & Subtitle */}
-            <div style={{ maxWidth: '640px' }}>
+            <div style={{ flex: '1 1 0', minWidth: 0, maxWidth: '640px' }}>
               <TextScramble
                 text="// SELECTED WORK / 2026"
                 style={{
@@ -172,6 +172,7 @@ export const ProjectsPage: React.FC = () => {
                 position: 'relative',
                 width: '100%',
                 maxWidth: '500px',
+                flex: '0 0 auto',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -372,9 +373,7 @@ export const ProjectsPage: React.FC = () => {
             display: none !important;
           }
           .projects-bust-wrap {
-            order: -1 !important;
-            max-width: 420px !important;
-            margin: 0 auto !important;
+            max-width: 320px !important;
           }
           .project-index-badge {
             display: none !important;

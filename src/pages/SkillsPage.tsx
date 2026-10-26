@@ -65,12 +65,12 @@ export const SkillsPage: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexWrap: 'wrap',
+              flexWrap: 'nowrap',
               gap: '2.5rem',
             }}
           >
             {/* Left Content */}
-            <div style={{ maxWidth: '640px' }}>
+            <div style={{ flex: '1 1 0', minWidth: 0, maxWidth: '640px' }}>
               <TextScramble
                 text="// MY SKILLS"
                 style={{
@@ -128,6 +128,7 @@ export const SkillsPage: React.FC = () => {
                 position: 'relative',
                 width: '100%',
                 maxWidth: '500px',
+                flex: '0 0 auto',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -262,9 +263,7 @@ export const SkillsPage: React.FC = () => {
       <style>{`
         @media (max-width: 820px) {
           .skills-bust-wrap {
-            order: -1 !important;
-            max-width: 420px !important;
-            margin: 0 auto !important;
+            max-width: 320px !important;
           }
         }
       `}</style>
