@@ -61,11 +61,12 @@ export const SkillsPage: React.FC = () => {
       >
         <div className="container">
           <div
+            className="skills-hero-row"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexWrap: 'nowrap',
+              flexWrap: 'wrap',
               gap: '2.5rem',
             }}
           >
@@ -262,8 +263,27 @@ export const SkillsPage: React.FC = () => {
 
       <style>{`
         @media (max-width: 820px) {
+          .skills-hero-row {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 2rem !important;
+          }
+          .skills-hero-row > div:first-child {
+            max-width: 100% !important;
+            flex: 1 1 100% !important;
+          }
           .skills-bust-wrap {
-            max-width: 320px !important;
+            order: -1 !important;
+            max-width: 420px !important;
+            margin: 0 auto !important;
+          }
+        }
+        @media (min-width: 821px) {
+          .skills-hero-row {
+            flex-wrap: nowrap !important;
+          }
+          .skills-bust-wrap {
+            order: 0 !important;
           }
         }
       `}</style>

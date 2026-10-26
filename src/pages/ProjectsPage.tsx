@@ -78,11 +78,12 @@ export const ProjectsPage: React.FC = () => {
       >
         <div className="container">
           <div
+            className="projects-hero-row"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexWrap: 'nowrap',
+              flexWrap: 'wrap',
               gap: '2rem',
             }}
           >
@@ -372,11 +373,30 @@ export const ProjectsPage: React.FC = () => {
           .gallery-progress-bar-container {
             display: none !important;
           }
+          .projects-hero-row {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 2rem !important;
+          }
+          .projects-hero-row > div:first-child {
+            max-width: 100% !important;
+            flex: 1 1 100% !important;
+          }
           .projects-bust-wrap {
-            max-width: 320px !important;
+            order: -1 !important;
+            max-width: 420px !important;
+            margin: 0 auto !important;
           }
           .project-index-badge {
             display: none !important;
+          }
+        }
+        @media (min-width: 1025px) {
+          .projects-hero-row {
+            flex-wrap: nowrap !important;
+          }
+          .projects-bust-wrap {
+            order: 0 !important;
           }
         }
       `}</style>
