@@ -119,6 +119,10 @@ export const MobileBottomNav: React.FC = () => {
             width: 100%;
             height: 64px;
             border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 0.5rem;
           }
           .mbn-dock::before {
             content: '';
@@ -134,11 +138,7 @@ export const MobileBottomNav: React.FC = () => {
             mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
             z-index: -1;
           }
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 0 0.5rem;
-          }
+
           .mbn-notch {
             position: absolute;
             top: -18px;
