@@ -419,9 +419,11 @@ export const HomePage: React.FC = () => {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  maxWidth: '560px',
+                  maxWidth: '720px',
                   display: 'flex',
                   justifyContent: 'center',
+                  margin: '0 auto',
+                  padding: '1rem',
                 }}
               >
                 <img
@@ -432,8 +434,14 @@ export const HomePage: React.FC = () => {
                     width: '100%',
                     height: 'auto',
                     objectFit: 'contain',
-                    filter: 'drop-shadow(0 0 35px rgba(255, 90, 0, 0.4))',
+                    filter: 'drop-shadow(0 0 45px rgba(255, 90, 0, 0.5))',
                     willChange: 'transform',
+                    borderRadius: '24px',
+                    transform: 'rotate(-2deg)',
+                    transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                    ':hover': {
+                      transform: 'rotate(0deg) scale(1.03)',
+                    },
                   }}
                 />
               </div>

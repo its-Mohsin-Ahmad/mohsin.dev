@@ -170,10 +170,13 @@ export const ProjectsPage: React.FC = () => {
             <div
               style={{
                 position: 'relative',
-                width: '320px',
+                width: '100%',
+                maxWidth: '480px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                margin: '0 auto',
+                padding: '1rem',
               }}
               className="projects-bust-wrap"
             >
@@ -184,7 +187,13 @@ export const ProjectsPage: React.FC = () => {
                   width: '100%',
                   height: 'auto',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 25px rgba(255, 90, 0, 0.4))',
+                  filter: 'drop-shadow(0 0 40px rgba(255, 90, 0, 0.5))',
+                  borderRadius: '24px',
+                  transform: 'rotate(-3deg)',
+                  transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  ':hover': {
+                    transform: 'rotate(0deg) scale(1.03)',
+                  },
                 }}
               />
             </div>
