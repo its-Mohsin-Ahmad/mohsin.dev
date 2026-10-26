@@ -149,7 +149,7 @@ export const SkillsPage: React.FC = () => {
                 BETTER TOOLS // BIGGER DREAMS
               </div>
               <img
-                src={`${import.meta.env.BASE_URL}assets/anime/character-bust.png`}
+                src={`${import.meta.env.BASE_URL}assets/anime/skills.png`}
                 alt="Mohsin Ahmad skills artwork"
                 style={{
                   width: '100%',

@@ -277,7 +277,7 @@ export const AboutPage: React.FC = () => {
               >
                 <img
                   ref={characterRef}
-                  src={`${import.meta.env.BASE_URL}assets/anime/character-about.png`}
+                  src={`${import.meta.env.BASE_URL}assets/anime/about.png`}
                   alt="Mohsin Ahmad illustration"
                   style={{
                     width: '100%',
