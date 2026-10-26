@@ -117,7 +117,7 @@ export const AboutPage: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 0.85fr)',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.3fr)',
               gap: '3rem',
               alignItems: 'center',
             }}
@@ -272,7 +272,7 @@ export const AboutPage: React.FC = () => {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  maxWidth: '700px',
+                  maxWidth: '850px',
                   display: 'flex',
                   justifyContent: 'center',
                   margin: '0 auto',

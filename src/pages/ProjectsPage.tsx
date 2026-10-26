@@ -171,7 +171,7 @@ export const ProjectsPage: React.FC = () => {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '480px',
+                maxWidth: '600px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
