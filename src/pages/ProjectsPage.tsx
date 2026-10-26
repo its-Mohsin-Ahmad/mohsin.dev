@@ -372,7 +372,9 @@ export const ProjectsPage: React.FC = () => {
             display: none !important;
           }
           .projects-bust-wrap {
-            display: none !important;
+            order: -1 !important;
+            max-width: 420px !important;
+            margin: 0 auto !important;
           }
           .project-index-badge {
             display: none !important;

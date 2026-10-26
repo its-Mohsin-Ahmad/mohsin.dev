@@ -262,7 +262,9 @@ export const SkillsPage: React.FC = () => {
       <style>{`
         @media (max-width: 820px) {
           .skills-bust-wrap {
-            display: none !important;
+            order: -1 !important;
+            max-width: 420px !important;
+            margin: 0 auto !important;
           }
         }
       `}</style>
