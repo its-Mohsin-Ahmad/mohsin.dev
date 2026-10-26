@@ -118,6 +118,12 @@ export const MobileBottomNav: React.FC = () => {
             position: relative;
             width: 100%;
             height: 64px;
+            border-radius: 24px;
+          }
+          .mbn-dock::before {
+            content: '';
+            position: absolute;
+            inset: 0;
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -126,6 +132,8 @@ export const MobileBottomNav: React.FC = () => {
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             -webkit-mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
             mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
+            z-index: -1;
+          }
             display: flex;
             align-items: center;
             justify-content: space-around;
