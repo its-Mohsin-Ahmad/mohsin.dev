@@ -191,9 +191,6 @@ export const ProjectsPage: React.FC = () => {
                   borderRadius: '24px',
                   transform: 'rotate(-3deg)',
                   transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  ':hover': {
-                    transform: 'rotate(0deg) scale(1.03)',
-                  },
                 }}
               />
             </div>
