@@ -98,7 +98,7 @@ export const InitialLoader: React.FC<{ onComplete: () => void }> = ({ onComplete
           marginBottom: '1.75rem',
         }}
       >
-        <KonohaLogo size={200} glow={true} />
+        <KonohaLogo size={300} glow={true} />
       </div>
 
       <div
