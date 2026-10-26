@@ -67,8 +67,8 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            -webkit-mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
-            mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 33px, black 34px);
+            -webkit-mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 30px, black 38px);
+            mask-image: radial-gradient(circle 34px at var(--notch-x, 50%) 0px, transparent 30px, black 38px);
             z-index: -1;
           }
 
